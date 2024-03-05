@@ -3,7 +3,7 @@ import NavBar from "./portfolioComponents/NavBar";
 import About from "./portfolioComponents/About";
 import Education from "./portfolioComponents/Education";
 import CourseCertifications from "./portfolioComponents/CourseCertifications";
-import Skill from "./portfolioComponents/skill";
+import Skill from "./portfolioComponents/Skill";
 import Contact from "./portfolioComponents/Contact";
 import Project from "./portfolioComponents/Project";
 import { Element } from "react-scroll";

@@ -19,7 +19,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <div className={`fixed top-0 left-0 right-0 z-10 `}>
+    <div className={`fixed  top-0 left-0 right-0 z-10 `}>
       <div className=" relative w-11/12 sm:w-9/12   justify-between items-end mx-auto mt-5 py-[6px] px-0  flex">
         <div className=" flex items-end sm:w-4/6 ">
           <div className=" text-gray-400 pr-5 lg:pr-20 text-xl sm:text-lg  w-1/5 lg:w-1/12 font-bold">
@@ -31,8 +31,8 @@ export default function NavBar() {
               offset={-70}
               onSetActive={handleSetActive}
             >
-              <p>
-                <span className=" text-[#773ec2]">R</span>imsan
+              <p className=" cursor-pointer">
+                <span className="   text-[#773ec2]">R</span>imsan
               </p>
             </Link>
           </div>
@@ -43,7 +43,7 @@ export default function NavBar() {
                 activeSection === "about-section"
                   ? "text-[#773ec2]"
                   : "text-gray-500"
-              } hover:text-[#773ec2] font-medium`}
+              } hover:text-[#773ec2] font-medium cursor-pointer`}
             >
               <Link
                 to="about-section"
@@ -61,7 +61,7 @@ export default function NavBar() {
                 activeSection === "education-section"
                   ? "text-[#773ec2]"
                   : "text-gray-500"
-              } hover:text-[#773ec2] font-medium`}
+              } hover:text-[#773ec2] font-medium cursor-pointer`}
             >
               <Link
                 to="education-section"
@@ -76,28 +76,10 @@ export default function NavBar() {
             </li>
             <li
               className={` ${
-                activeSection === "certification-section"
-                  ? "text-[#773ec2]"
-                  : "text-gray-500"
-              } hover:text-[#773ec2] font-medium`}
-            >
-              <Link
-                to="certification-section"
-                smooth={true}
-                duration={500}
-                spy={true}
-                offset={-70}
-                onSetActive={handleSetActive}
-              >
-                Certification
-              </Link>
-            </li>
-            <li
-              className={` ${
                 activeSection === "skill-section"
                   ? "text-[#773ec2]"
                   : "text-gray-500"
-              } hover:text-[#773ec2] font-medium`}
+              } hover:text-[#773ec2] font-medium cursor-pointer`}
             >
               <Link
                 to="skill-section"
@@ -112,10 +94,29 @@ export default function NavBar() {
             </li>
             <li
               className={` ${
+                activeSection === "certification-section"
+                  ? "text-[#773ec2]"
+                  : "text-gray-500"
+              } hover:text-[#773ec2] font-medium cursor-pointer`}
+            >
+              <Link
+                to="certification-section"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+                onSetActive={handleSetActive}
+              >
+                Certification
+              </Link>
+            </li>
+
+            <li
+              className={` ${
                 activeSection === "project-section"
                   ? "text-[#773ec2]"
                   : "text-gray-500"
-              } hover:text-[#773ec2] font-medium`}
+              } hover:text-[#773ec2] font-medium cursor-pointer`}
             >
               <Link
                 to="project-section"
@@ -153,7 +154,7 @@ export default function NavBar() {
               activeSection === "about-section"
                 ? "text-[#773ec2]"
                 : "text-gray-800"
-            }  hover:text-[#773ec2]  font-medium`}
+            }  hover:text-[#773ec2]  font-medium cursor-pointer`}
           >
             <Link
               to="about-section"
@@ -171,7 +172,7 @@ export default function NavBar() {
               activeSection === "education-section"
                 ? "text-[#773ec2]"
                 : "text-gray-800"
-            }  hover:text-[#773ec2]  font-medium`}
+            }  hover:text-[#773ec2]  font-medium cursor-pointer`}
           >
             <Link
               to="education-section"
@@ -184,30 +185,13 @@ export default function NavBar() {
               Education
             </Link>
           </li>
-          <li
-            className={`${
-              activeSection === "certification-section"
-                ? "text-[#773ec2]"
-                : "text-gray-800"
-            }  hover:text-[#773ec2]  font-medium`}
-          >
-            <Link
-              to="certification-section"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={-70}
-              onSetActive={handleSetActive}
-            >
-              Certification
-            </Link>
-          </li>
+
           <li
             className={`${
               activeSection === "skill-section"
                 ? "text-[#773ec2]"
                 : "text-gray-800"
-            }  hover:text-[#773ec2]  font-medium`}
+            }  hover:text-[#773ec2]  font-medium cursor-pointer`}
           >
             <Link
               to="skill-section"
@@ -222,10 +206,28 @@ export default function NavBar() {
           </li>
           <li
             className={`${
+              activeSection === "certification-section"
+                ? "text-[#773ec2]"
+                : "text-gray-800"
+            }  hover:text-[#773ec2]  font-medium cursor-pointer`}
+          >
+            <Link
+              to="certification-section"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-70}
+              onSetActive={handleSetActive}
+            >
+              Certification
+            </Link>
+          </li>
+          <li
+            className={`${
               activeSection === "project-section"
                 ? "text-[#773ec2]"
                 : "text-gray-800"
-            }  hover:text-[#773ec2]  font-medium`}
+            }  hover:text-[#773ec2]  font-medium cursor-pointer`}
           >
             <Link
               to="project-section"
@@ -237,7 +239,6 @@ export default function NavBar() {
             >
               Project
             </Link>
-            Project
           </li>
           <li className=" w-full pb-1 flex items-center justify-center">
             <button className=" sm:hidden block text-sm px-5 py-1 rounded text-white bg-[#7c2ae8] hover:bg-[#773ec2]">

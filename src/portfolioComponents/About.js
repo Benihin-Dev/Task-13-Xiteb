@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import profile from "../img/profile.png";
 import { ReactTyped } from "react-typed";
 import { RiFacebookFill } from "react-icons/ri";
@@ -6,13 +6,32 @@ import { BiLogoLinkedin } from "react-icons/bi";
 import { PiWhatsappLogoBold } from "react-icons/pi";
 
 export default function About() {
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      const element1 = document.querySelector(".aboutUser");
+      const element2 = document.querySelector(".profileImg");
+      const element3 = document.querySelector(".profileImg2");
+
+      element1.classList.remove("slideFromLeftAnimation");
+      element2.classList.remove("slideFromRightAnimation");
+      element3.classList.remove("slideFromRightAnimation");
+    }, 500);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, []);
   const [whatsappHover, setWhatsappHover] = useState(false);
   return (
     <div className="   w-11/12 sm:w-4/5 mx-auto mt-12 sm:mt-24 md:mt-20 lg:mt-12 sm:flex">
       <div className=" sm:hidden flex sm:w-1/2 px-16 sm:px-10 ">
-        <img src={profile} className=" object-contain" alt="" />
+        <img
+          src={profile}
+          className="profileImg slideFromRightAnimation object-contain"
+          alt=""
+        />
       </div>
-      <div className="  sm:w-1/2 mt-10 lg:mt-0 flex px-4 md:px-5 lg:px-8">
+      <div className="aboutUser slideFromLeftAnimation  sm:w-1/2 mt-10 lg:mt-0 flex px-4 md:px-5 lg:px-8">
         <div className=" mt-auto lg:pb-10 ">
           <div>
             <p className=" text-4xl sm:text-3xl text-gray-500 font-bold">
@@ -74,7 +93,11 @@ export default function About() {
         </div>
       </div>
       <div className=" hidden sm:flex sm:w-1/2 px-16 sm:px-10">
-        <img src={profile} className=" object-contain" alt="" />
+        <img
+          src={profile}
+          className="profileImg2 slideFromRightAnimation object-contain "
+          alt=""
+        />
       </div>
     </div>
   );

@@ -2,10 +2,10 @@ import React from "react";
 import eduImg from "../img/edu.jpg";
 import { useInView } from "react-intersection-observer";
 
-
 export default function Education() {
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.4,
+    triggerOnce: true,
   });
   return (
     <div className=" w-11/12 sm:w-4/5 mx-auto my-20 p-5 sm:p-10">
@@ -52,7 +52,7 @@ export default function Education() {
             ref={ref}
             className={`animated-component ${
               inView ? "is-visible" : ""
-            } shadow-lg border border-gray-300 rounded-md pb-5 overflow-hidden`}
+            }  shadow-lg border border-gray-300 rounded-md pb-5 overflow-hidden`}
           >
             <div className=" w-full mx-auto">
               <img src={eduImg} alt="" className=" object-contain" />

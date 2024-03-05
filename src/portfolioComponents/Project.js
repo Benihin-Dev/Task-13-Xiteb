@@ -4,19 +4,21 @@ import { useInView } from "react-intersection-observer";
 
 export default function Project() {
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.4,
   });
   return (
     <div className={` w-11/12 sm:w-4/5 sm:px-8 mx-auto`}>
       <h1 className=" font-medium text-gray-500 ">
         | My Projects <span className=" text-[#773ec2]">Works</span>
       </h1>
-      <div className=" pt-10 grid px-10 sm:grid-cols-3 gap-5 w-full">
+      <div
+        ref={ref}
+        className={`animated-component ${
+          inView ? "is-visible" : ""
+        } pt-10 grid px-10 sm:grid-cols-3 gap-5 w-full`}
+      >
         <div
-          ref={ref}
-          className={`animated-component ${
-            inView ? "is-visible" : ""
-          } pt-1 shadow-md hover:shadow-[#773ec266] border border-gray-300 rounded-md overflow-hidden`}
+          className={` pt-1 shadow-md hover:shadow-[#773ec266] border border-gray-300 rounded-md overflow-hidden`}
         >
           <h1 className=" w-full text-[#3a225a]  text-center text-xs my-1 font-semibold">
             Project Name
@@ -29,10 +31,7 @@ export default function Project() {
           </div>
         </div>
         <div
-          ref={ref}
-          className={`animated-component ${
-            inView ? "is-visible" : ""
-          } pt-1 shadow-md hover:shadow-[#773ec266] border border-gray-300 rounded-md overflow-hidden`}
+          className={` pt-1 shadow-md hover:shadow-[#773ec266] border border-gray-300 rounded-md overflow-hidden`}
         >
           <h1 className=" w-full text-[#3a225a]  text-center text-xs my-1 font-semibold">
             Project Name
@@ -45,10 +44,7 @@ export default function Project() {
           </div>
         </div>
         <div
-          ref={ref}
-          className={`animated-component ${
-            inView ? "is-visible" : ""
-          } pt-1 shadow-md hover:shadow-[#773ec266] border border-gray-300 rounded-md overflow-hidden`}
+          className={` pt-1 shadow-md hover:shadow-[#773ec266] border border-gray-300 rounded-md overflow-hidden`}
         >
           <h1 className=" w-full text-[#3a225a]  text-center text-xs my-1 font-semibold">
             Project Name
