@@ -130,7 +130,7 @@ export default function ExperienceSomethingNew() {
         <div className=" w-10/12  mx-auto shadow-md h-3 rotate-180 mt-0 sm:mt-24"></div>
       </div>
       {detailedShowWindowState && (
-        <div className=" absolute bg-[#414142bc] py-10 w-full h-[110%] sm:h-[115%] lg:h-[10%] top-[-50px]">
+        <div className=" absolute bg-[#414142bc] py-10 w-full h-[110%] sm:h-[115%] lg:h-[105%] top-[-50px]">
           <div className=" w-11/12 z-10 sm:w-8/12 lg:w-6/12 rounded mx-auto bg-white border p-5 relative">
             <div className="w-11/12 mx-auto flex justify-between pb-3">
               <p className=" text-lg text-center w-full border-b pb-2">
