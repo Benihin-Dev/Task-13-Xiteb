@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        play: ["Play"],
+        montserrat: ["Montserrat"],
+        mulish: ["Mulish"],
       },
     },
   },

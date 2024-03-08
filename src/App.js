@@ -1,34 +1,24 @@
 import "./App.css";
-import NavBar from "./portfolioComponents/NavBar";
-import About from "./portfolioComponents/About";
-import Education from "./portfolioComponents/Education";
-import CourseCertifications from "./portfolioComponents/CourseCertifications";
-import Skill from "./portfolioComponents/Skill";
-import Contact from "./portfolioComponents/Contact";
-import Project from "./portfolioComponents/Project";
+import Header from "./components/Header";
+import Slider from "./components/Slider";
+import Destination from "./components/Destination";
+import ExperienceSomethingNew from "./components/ExperienceSomethingNew";
+import Offers from "./components/Offers";
+import Footer from "./components/Footer";
 import { Element } from "react-scroll";
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <Element name="about-section">
-        <About />
+    <div className=" font-montserrat overflow-hidden">
+      <Element name="header-section">
+        <Header />
       </Element>
-      <Element name="education-section">
-        <Education />
-      </Element>
-      <Element name="skill-section">
-        <Skill />
-      </Element>
-      <Element name="certification-section">
-        <CourseCertifications />
-      </Element>
-      <Element name="project-section">
-        <Project />
-      </Element>
-      <Contact />
-    </>
+      <Slider />
+      <Destination />
+      <ExperienceSomethingNew />
+      <Offers />
+      <Footer />
+    </div>
   );
 }
 
