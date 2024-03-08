@@ -28,13 +28,13 @@ export default function Slider() {
   const handlePrevClick = () => {
     setCurrentSlide((prevSlide) => (prevSlide === 0 ? 3 : prevSlide - 1));
   };
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setCurrentSlide((currentSlide + 1) % 4);
-  //   }, 5000);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentSlide((currentSlide + 1) % 4);
+    }, 8000);
 
-  //   return () => clearInterval(intervalId);
-  // }, [currentSlide]);
+    return () => clearInterval(intervalId);
+  }, [currentSlide]);
 
   // Spacial Code Section
   const [codeTypeState, setCodeTypeState] = useState(false);
