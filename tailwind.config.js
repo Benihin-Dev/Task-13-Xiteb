@@ -6,6 +6,8 @@ module.exports = {
       fontFamily: {
         montserrat: ["Montserrat"],
         mulish: ["Mulish"],
+        ubuntu: ["Ubuntu"],
+        playwrite: ["Playwrite"],
       },
     },
   },

@@ -1,21 +1,29 @@
-.NavItemParent:hover .NavItemChild {
-  transform: rotate(180deg);
+body::-webkit-scrollbar {
+  width: 8px;
 }
 
-.slide-enter {
-  transform: translateX(-100%);
-  transition: transform 5s ease-in-out;
+body::-webkit-scrollbar-thumb {
+  background-color: #b0afaf8e;
+  border-radius: 2px;
+  cursor: pointer;
 }
-.slide-enter-active {
-  transform: translateX(0);
-  transition: transform 5s ease-in-out;
+
+body::-webkit-scrollbar-track {
+  background-color: #ffffff00;
 }
-.slide-exit {
-  transform: translateX(0);
+
+.customScrollbar::-webkit-scrollbar {
+  width: 5px;
 }
-.slide-exit-active {
-  transform: translateX(100%);
-  transition: transform 5s ease-in-out;
+
+.customScrollbar::-webkit-scrollbar-thumb {
+  background-color: #f3f3f382;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.customScrollbar::-webkit-scrollbar-track {
+  background-color: #ffffff00;
 }
 
 .gradiendColour {
@@ -35,4 +43,64 @@
 .animated-component.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.slideFromRight {
+  animation: fromRight 0.3s ease-in-out;
+}
+
+@keyframes fromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slideFromLeft {
+  animation: fromLeft 0.3s ease-in-out;
+}
+
+@keyframes fromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slideDown {
+  animation: slideDown 0.2s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideUp {
+  animation: slideUp 0.3s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
