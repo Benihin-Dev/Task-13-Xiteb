@@ -13,6 +13,25 @@ import Menu from "../menu/Menu";
 export default function HomePage() {
   const [scrollDirection, setScrollDirection] = useState("up");
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [productData, setProductData] = useState({});
+
+  // just fetch 20 product details using fake api, but not use them for any development
+  const getProductDetails = async () => {
+    try {
+      const response = await axios.get("https://fakestoreapi.com/products");
+      if (response.status === 200) {
+        setProductData(response.data);
+      }
+    } catch (error) {
+      console.log(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getProductDetails();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
