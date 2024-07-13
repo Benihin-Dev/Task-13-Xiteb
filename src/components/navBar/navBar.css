@@ -1,0 +1,3 @@
+.navLink{
+    @apply  cursor-pointer hover:border-white border-b border-transparent duration-200
+}

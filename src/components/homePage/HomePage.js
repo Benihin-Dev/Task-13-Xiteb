@@ -1,16 +1,16 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../navBar/NavBar";
-import Hero from "../heroSection/Hero";
-import Courses from "../courses/Courses";
-import AboutUs from "../aboutUs/AboutUs";
-import Programs from "../programs/Programs";
-import MakeATour from "../makeATour/MakeATour";
-import OurAchievements from "../ourAchievements/OurAchievements";
+import Hero from "../hero/Hero";
+import About from "../about/About";
+import Banner from "../offerBanner/Banner";
+import ProductSlider from "../productSlider/ProductSlider";
+import Organic from "../organic/Organic";
 import Footer from "../footer/Footer";
-import Testimonial from "../testimonial/Testimonial";
+import Menu1 from "../menu/MenuTemplet1";
+import Menu2 from "../menu/MenuTemplet2";
+import Menu from "../menu/Menu";
 
 export default function HomePage() {
-  const heroRef = useRef(null);
   const [scrollDirection, setScrollDirection] = useState("up");
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -31,47 +31,21 @@ export default function HomePage() {
     };
   }, [lastScrollY]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setScrollDirection("no");
-        } else if (scrollDirection === "no") {
-          setScrollDirection("up");
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
-      }
-    };
-  }, [heroRef, scrollDirection]);
-
   return (
-    <div className=" w-full overflow-hidden">
+    <div>
       {scrollDirection === "up" ? (
-        <div className="slideDown w-full z-40 bg-[#ffffffe1] fixed top-0 left-0 right-0">
+        <div className="slideDown w-full z-40   fixed top-0 left-0 right-0">
           <NavBar />
         </div>
       ) : (
         ""
       )}
-      <div ref={heroRef}>
-        <Hero />
-      </div>
-      <Courses />
-      <AboutUs />
-      <Programs />
-      <OurAchievements />
-      <MakeATour />
-      <Testimonial />
+      <Hero />
+      <About />
+      <Menu />
+      <Banner />
+      <Organic />
+      <ProductSlider />
       <Footer />
     </div>
   );

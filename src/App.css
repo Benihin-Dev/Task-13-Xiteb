@@ -46,13 +46,13 @@ body::-webkit-scrollbar-track {
 }
 
 .slideFromRight {
-  animation: fromRight 0.3s ease-in-out;
+  animation: fromRight 0.9s ease-in-out;
 }
 
 @keyframes fromRight {
   from {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(500px);
   }
   to {
     opacity: 1;
@@ -60,14 +60,42 @@ body::-webkit-scrollbar-track {
   }
 }
 
+.slideFromRight2 {
+  animation: fromRight2 0.6s ease-in-out;
+}
+
+@keyframes fromRight2 {
+  from {
+    transform: translateX(50px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .slideFromLeft {
-  animation: fromLeft 0.3s ease-in-out;
+  animation: fromLeft 0.7s ease-in-out;
 }
 
 @keyframes fromLeft {
   from {
     opacity: 0;
     transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slideFromLeft2 {
+  animation: fromLeft 0.4s ease-in-out;
+}
+
+@keyframes fromLeft2 {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
   }
   to {
     opacity: 1;
@@ -82,7 +110,7 @@ body::-webkit-scrollbar-track {
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
@@ -91,16 +119,49 @@ body::-webkit-scrollbar-track {
 }
 
 .slideUp {
-  animation: slideUp 0.3s ease-in-out;
+  animation: slideUp 0.4s ease-in-out;
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+.zoomIn {
+  animation: zoom 1s ease-in-out;
+}
+
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale(80%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(110%);
+  }
+}
+
+.zoomOut {
+  animation: zoomOut 2s ease-in-out;
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 0;
+    transform: scale(185%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
+
+

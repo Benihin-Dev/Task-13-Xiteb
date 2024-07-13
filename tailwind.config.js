@@ -5,9 +5,10 @@ module.exports = {
     extend: {
       fontFamily: {
         montserrat: ["Montserrat"],
-        mulish: ["Mulish"],
+        dosis: ["Dosis"],
         ubuntu: ["Ubuntu"],
         playwrite: ["Playwrite"],
+        allura: ["Allura"],
       },
     },
   },
