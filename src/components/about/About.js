@@ -1,6 +1,11 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 export default function About() {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   return (
     <div className=" w-full relative pt-10 sm:pt-20 pb-20 ">
       <div className=" w-full px-5 sm:px-0 sm:w-11/12 mx-auto">
@@ -27,7 +32,12 @@ export default function About() {
               </button>
             </div>
           </div>
-          <div className=" lg:w-1/2 mt-16 lg:mt-0 flex items-center">
+          <div
+            ref={ref}
+            className={`animated-componentFromRight ${
+              inView ? "is-visible" : ""
+            } lg:w-1/2 mt-16 lg:mt-0 flex items-center `}
+          >
             <div className=" w-full h-full relative">
               <img
                 src="https://wgl-dsites.net/nuage/wp-content/uploads/2021/07/img-1.png"
@@ -40,11 +50,11 @@ export default function About() {
                   alt=""
                 />
               </div>
-              <div className=" absolute -z-10 top-[50%] left-[60%] w-2/3 h-full">
+              <div className=" absolute z-10 top-[50%] left-[60%] w-2/3 pl-10 h-full">
                 <img
                   src="https://media.ulta.com/i/ulta/2595211_sm?w=1089&h=1089&fmt=auto"
                   alt=""
-                  className=" overscroll-contain -rotate-45"
+                  className=" object-contain -rotate-45"
                 />
               </div>
             </div>

@@ -6,7 +6,7 @@ import { HiBars3BottomLeft } from "react-icons/hi2";
 
 export default function NavBar() {
   return (
-    <div className="w-full   bg-[#2c2c2cf8]">
+    <div className="w-full   bg-[#2c2c2cfa]">
       <div className=" w-full   mx-auto flex items-center justify-between gap-10">
         <div className=" pl-5 sm:pl-8 md:pl-16 pb-1 relative  ">
           <p className="   font-allura mx-auto text-center text-4xl text-[#5e5e5e]">

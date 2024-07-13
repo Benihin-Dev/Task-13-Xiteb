@@ -4,8 +4,13 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import sideImg from "../assets/img/1.png";
+import { useInView } from "react-intersection-observer";
 
 export default function Footer() {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   return (
     <div className=" w-full py-20 relative  px-5 sm:px-0 bg-[#2c2c2c] text-white">
       <div>
@@ -67,7 +72,12 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className=" absolute bottom-[80%] sm:bottom-[40%] left-[70%] sm:left-[85%] size-[70vw] rotate-12 sm:w-[30vw] ">
+      <div
+        ref={ref}
+        className={`animated-componentFromRight ${
+          inView ? "is-visible" : ""
+        } absolute bottom-[80%] sm:bottom-[40%] left-[70%] sm:left-[85%] size-[70vw] rotate-12 sm:w-[30vw] `}
+      >
         <img
           src={sideImg}
           alt=""

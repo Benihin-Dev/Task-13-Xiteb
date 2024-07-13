@@ -2,8 +2,13 @@ import React from "react";
 import "./productSlider.css";
 import SliderForProductas from "./SliderForProductas";
 import sideImg from "../assets/img/2.png";
+import { useInView } from "react-intersection-observer";
 
 export default function ProductSlider() {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   const productData = [
     {
       name: "Selfie Makeup",
@@ -102,7 +107,12 @@ export default function ProductSlider() {
           </button>
         </div>
       </div>
-      <div className=" absolute bottom-[80%]  right-[65%] sm:right-[85%]  sm:w-[25vw] w-[60vw] ">
+      <div
+        ref={ref}
+        className={`animated-componentFromLeft ${
+          inView ? "is-visible" : ""
+        } absolute bottom-[80%]  right-[65%] sm:right-[85%]  sm:w-[25vw] w-[60vw] `}
+      >
         <img
           src={sideImg}
           alt=""

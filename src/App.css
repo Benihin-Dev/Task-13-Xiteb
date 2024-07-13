@@ -34,15 +34,26 @@ body::-webkit-scrollbar-track {
   border-radius: 15px 0 0 15px;
 }
 
-.animated-component {
+.animated-componentFromRight {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateX(30px);
   transition: opacity 0.5s, transform 0.5s;
 }
 
-.animated-component.is-visible {
+.animated-componentFromRight.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
+}
+
+.animated-componentFromLeft {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.animated-componentFromLeft.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .slideFromRight {
@@ -162,6 +173,3 @@ body::-webkit-scrollbar-track {
     transform: scale(100%);
   }
 }
-
-
-

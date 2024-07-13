@@ -5,8 +5,13 @@ import { PiPlant } from "react-icons/pi";
 import { MdPets } from "react-icons/md";
 import { SiMoleculer } from "react-icons/si";
 import sideImg from "../assets/img/3.png";
+import { useInView } from "react-intersection-observer";
 
 export default function Organic() {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   const organic = [
     {
       head: "TOXINS FREE",
@@ -54,7 +59,7 @@ export default function Organic() {
                 className="   w-full flex  items-start justify-center gap-0"
               >
                 <div className="w-4/12    relative">
-                  <svg 
+                  <svg
                     viewBox="0 0 200 200"
                     xmlns="http://www.w3.org/2000/svg"
                     className=" size-20    absolute left-0 top-0"
@@ -81,7 +86,12 @@ export default function Organic() {
           <img src={image} alt="" className=" w-full h-[40vh] object-cover" />
         </div>
       </div>
-      <div className=" absolute bottom-[92%]  sm:bottom-[70%] left-[60%] sm:left-[80%] rotate-90  sm:w-[30vw] w-[50vw] ">
+      <div
+        ref={ref}
+        className={`animated-componentFromRight ${
+          inView ? "is-visible" : ""
+        } absolute bottom-[92%]  sm:bottom-[70%] left-[60%] sm:left-[80%] rotate-90  sm:w-[30vw] w-[50vw] `}
+      >
         <img
           src={sideImg}
           alt=""

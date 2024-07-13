@@ -1,8 +1,13 @@
 import React from "react";
 import OfferSlider from "./OfferSlider";
 import OfferSlider1 from "./OfferSlider1";
+import { useInView } from "react-intersection-observer";
 
 export default function Banner() {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   const offerProductData = [
     {
       image:
@@ -206,7 +211,12 @@ export default function Banner() {
           <OfferSlider data={offerProductData} />
         </div>
       </div>
-      <div className=" absolute bottom-[90%] sm:bottom-[70%] right-[65%] sm:right-[85%]  sm:w-[25vw] w-[60vw] ">
+      <div
+        ref={ref}
+        className={`animated-componentFromLeft ${
+          inView ? "is-visible" : ""
+        } absolute bottom-[90%] sm:bottom-[70%] right-[65%] sm:right-[85%]  sm:w-[25vw] w-[60vw] `}
+      >
         <img
           src="https://lamelcosmetics.com/cdn/shop/files/bb_blush_tea_rose_401_swatch.webp?v=1718357240&width=480"
           alt=""
