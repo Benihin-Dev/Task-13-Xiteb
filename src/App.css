@@ -72,14 +72,18 @@ body::-webkit-scrollbar-track {
 }
 
 .slideFromRight2 {
-  animation: fromRight2 0.6s ease-in-out;
+  animation: fromRight2 0.2s ease-in-out;
 }
 
 @keyframes fromRight2 {
   from {
+    opacity: 0;
+
     transform: translateX(50px);
   }
   to {
+    opacity: 1;
+
     transform: translateX(0);
   }
 }
