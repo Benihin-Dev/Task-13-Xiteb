@@ -1,0 +1,10 @@
+.container .sub {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.container .main:hover + .sub {
+  display: flex;
+  opacity: 1;
+}
