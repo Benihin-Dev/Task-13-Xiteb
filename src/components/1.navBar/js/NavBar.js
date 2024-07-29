@@ -8,7 +8,7 @@ export default function NavBar() {
   const [stateForNavLinkOnSmallScreen, setStateForNavLinkOnSmallScreen] =
     useState(false);
   return (
-    <div className=" w-full relative">
+    <div className=" w-full relative shadow-lg">
       <TopSection />
       <BottomSection
         setStateForNavLinkOnSmallScreen={setStateForNavLinkOnSmallScreen}

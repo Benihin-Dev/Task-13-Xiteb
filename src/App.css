@@ -25,14 +25,7 @@ body::-webkit-scrollbar-track {
 .customScrollbar::-webkit-scrollbar-track {
   background-color: #ffffff00;
 }
-
-.gradiendColour {
-  background: linear-gradient(180deg, rgba(72, 70, 70, 0.222), #252323cd);
-}
-
-.memberExclusive {
-  border-radius: 15px 0 0 15px;
-}
+ 
 
 .animated-componentFromRight {
   opacity: 0;
