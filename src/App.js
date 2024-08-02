@@ -1,10 +1,10 @@
 import "./App.css";
-import HomePage from "./components/0.homePage/js/HomePage";
+import Home from "./components/0.HomePage/js/Home";
 
 function App() {
   return (
     <div className=" font-montserrat overflow-hidden">
-      <HomePage />
+      <Home />
     </div>
   );
 }

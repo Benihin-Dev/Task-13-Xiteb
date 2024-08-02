@@ -25,7 +25,6 @@ body::-webkit-scrollbar-track {
 .customScrollbar::-webkit-scrollbar-track {
   background-color: #ffffff00;
 }
- 
 
 .animated-componentFromRight {
   opacity: 0;
@@ -50,13 +49,13 @@ body::-webkit-scrollbar-track {
 }
 
 .slideFromRight {
-  animation: fromRight 0.9s ease-in-out;
+  animation: fromRight 0.3s ease-in-out;
 }
 
 @keyframes fromRight {
   from {
     opacity: 0;
-    transform: translateX(500px);
+    transform: translateX(50px);
   }
   to {
     opacity: 1;
@@ -169,4 +168,8 @@ body::-webkit-scrollbar-track {
     opacity: 1;
     transform: scale(100%);
   }
+}
+
+.responsiveWeith {
+  @apply w-full px-5 sm:px-0 mx-auto sm:w-11/12 md:w-10/12;
 }

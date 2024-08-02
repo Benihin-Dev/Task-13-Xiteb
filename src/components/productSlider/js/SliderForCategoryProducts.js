@@ -6,65 +6,21 @@ import { HiStar, HiOutlineStar } from "react-icons/hi2";
 import { CiHeart } from "react-icons/ci";
 import { PiCopyLight } from "react-icons/pi";
 import { FaRegEye } from "react-icons/fa";
-import { MdOutlineKeyboardDoubleArrowDown } from "react-icons/md";
 
-export default function SliderForProducts({ data }) {
+export default function SliderForCategoryProducts({ data }) {
   const slides = data.data.map((item) => item);
   const sliderRef = useRef(null);
 
-  //next btn function
-  const handleNextSlide = (event) => {
-    event.stopPropagation();
-    sliderRef.current.slickNext();
-  };
-
-  //previous btn function
-  const handlePrevSlide = (event) => {
-    event.stopPropagation();
-    sliderRef.current.slickPrev();
-  };
-
   return (
-    <div
-      className={` w-full  px-0 mx-auto sm:w-11/12 md:w-10/12 ${data.bgColor}   border rounded `}
-    >
-      <div className=" border-b px-5 py-8 w-full ">
-        <div className=" w-full flex items-center justify-between">
-          <div className=" w-2/3">
-            <p className=" text-lg font-semibold pb-3"> {data.title}</p>
-            <p className=" text-sm text-gray-600">{data.desc}</p>
-          </div>
-          <div className=" w-1/3 flex items-center justify-end">
-            <div className=" w-fit flex items-center justify-center gap-1">
-              <div className=" pr-1   flex items-center justify-center">
-                <div
-                  className="   py-4 w-fit rotate-90 "
-                  onClick={handlePrevSlide}
-                >
-                  <MdOutlineKeyboardDoubleArrowDown className="text-gray-500 size-6 hover:text-[#ffc137]  duration-200 " />
-                </div>
-              </div>
-              <p className=" px- text-gray-400 text-2xl pb-1">|</p>
-              <div className="">
-                <div
-                  className=" py-4 w-fit px-1 -rotate-90   duration-200 "
-                  onClick={handleNextSlide}
-                >
-                  <MdOutlineKeyboardDoubleArrowDown className="text-gray-500  size-6 hover:text-[#ffc137]  duration-200 " />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className=" flex items-center pt-4  pb-2 justify-center relative">
+    <div className={` w-full  `}>
+      <div className=" flex items-center  justify-center relative">
         <div className=" w-full p-5">
           <div className="w-full h-full bg-transparent   ">
             <Slider
               ref={sliderRef}
-              dots={false}
+              dots={true}
               infinite={true}
-              slidesToShow={5}
+              slidesToShow={3}
               slidesToScroll={1}
               autoplay={true}
               autoplaySpeed={6000}
@@ -73,7 +29,7 @@ export default function SliderForProducts({ data }) {
                 {
                   breakpoint: 954,
                   settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 2,
                   },
                 },
                 {
@@ -91,9 +47,9 @@ export default function SliderForProducts({ data }) {
               ]}
             >
               {slides.map((item, index) => (
-                <div key={index} className=" w-full px-2 sm:px-4">
+                <div key={index} className=" w-full sm:px-4">
                   <div className=" border p-5 relative group overflow-hidden rounded hover:shadow bg-[white] ">
-                    <img src={item.img} alt="" />
+                    <img src={item.img} className=" pb-4" alt="" />
                     <p className=" pt-4 pb-2 font-semibold  text-sm">
                       {item.name}
                     </p>
@@ -120,7 +76,7 @@ export default function SliderForProducts({ data }) {
                         $ {item.price}.00
                       </p>
                     </div>
-                    <button className=" mt-3 w-full text-sm px-5 py-2 rounded-md hover:text-white duration-300 border border-[#393939] hover:bg-[#393939] ">
+                    <button className=" mb-3 mt-4 w-full text-sm px-5 py-2 rounded-md hover:text-white duration-300 border border-[#393939] hover:bg-[#393939] ">
                       Add To Cart
                     </button>
                     <div className="slideFromRight group-hover:block hidden absolute space-y-4  top-0 right-0 m-2">
