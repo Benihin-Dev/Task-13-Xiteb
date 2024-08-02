@@ -13,12 +13,12 @@ export default function Menu() {
             alt=""
             className=" w-full object-cover h-full"
           />
-          <div className=" absolute w-full h-full top-0 left-0 right-0 bottom-0 border p-10 flex items-end">
-            <div className=" w-1/2   space-y-3 ">
+          <div className=" absolute w-full h-full top-0 left-0 right-0 bottom-0 border p-5 md:p-10 flex items-end">
+            <div className=" w-full sm:w-1/2   md:space-y-3 ">
               <button className=" bg-[#ffc107] text-white text-sm px-3 py-1 rounded">
                 DISPLAY SIZE: 2.89
               </button>
-              <p className="  text-3xl text-white font-semibold">
+              <p className=" text-lg sm:text-2xl md:text-3xl text-white font-semibold">
                 Visor Virtual Reality Headset{" "}
               </p>
               <p className=" text-white text-sm">HDMI 2.0 video output</p>
@@ -35,11 +35,11 @@ export default function Menu() {
             className=" h-full w-full object-cover "
           />
           <div className=" absolute w-full h-full top-0 left-0 right-0 bottom-0   px-5 py-3 flex items-end justify-end">
-            <div className=" w-1/2 space-y-2 ">
+            <div className=" w-1/2 lg:space-y-2 ">
               <button className=" bg-[#ffc107] text-white text-sm px-3 py-1 rounded">
                 Rockerz 650
               </button>
-              <p className=" text-3xl lg:text-xl font-semibold">
+              <p className=" text:2xl lg:text-xl font-semibold">
                 boAt Bluetooth <br /> Headphones
               </p>
               <p className=" text-xs">$15 Extra Discount on UPI</p>
@@ -53,11 +53,11 @@ export default function Menu() {
             className=" w-full object-cover h-full "
           />
           <div className=" absolute w-full h-full top-0 left-0 right-0 bottom-0   px-5 py-3 flex items-end  ">
-            <div className=" w-1/2 space-y-3    ">
+            <div className=" w-4/5 md:w-1/2 space-y-3    ">
               <button className=" bg-[#ffc107] text-white text-sm px-3 py-1 rounded">
                 Hot Deals
               </button>
-              <p className=" text-3xl  lg:text-xl font-semibold">
+              <p className=" text-2xl  lg:text-xl font-semibold">
                 Top Phone Big Sale 50% OFF
               </p>
               <p className=" text-xs text-white">Limited Time : Online Only!</p>
