@@ -38,7 +38,7 @@ export default function SecondSection() {
           <p>$ {currencyList[SelectedCurrencyIndex]}</p>
           <MdOutlineKeyboardArrowUp className=" text-gray-600 size-5 rotate-180" />
           {stateForCurrencyList && (
-            <div className=" w-full border top-[100%] left-0 absolute items-center">
+            <div className=" w-full border top-[100%] left-0 absolute items-center z-10 bg-white">
               {currencyList.map((item, index) => (
                 <p
                   onClick={() => {

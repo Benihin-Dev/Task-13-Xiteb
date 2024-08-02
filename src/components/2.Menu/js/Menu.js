@@ -45,7 +45,7 @@ export default function Menu() {
               <p className=" text-xs">$15 Extra Discount on UPI</p>
             </div>
           </div>
-        </div> 
+        </div>
         <div className="rounded-md overflow-hidden shadow relative w-full  ">
           <img
             src={bannerImg3}
