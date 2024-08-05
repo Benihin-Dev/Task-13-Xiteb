@@ -1,15 +1,11 @@
-import React from "react";
-import ThirdSection from "./ThirdSection";
-import BottomSection from "./BottomSection";
+import React, { useState } from "react";
 import TopSection from "./TopSection";
-import SecondSection from "./SecondSection";
+import BottomSection from "./BottomSection";
 
 export default function Header() {
   return (
     <>
       <TopSection />
-      <SecondSection />
-      <ThirdSection />
       <BottomSection />
     </>
   );

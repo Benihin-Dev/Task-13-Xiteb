@@ -171,5 +171,22 @@ body::-webkit-scrollbar-track {
 }
 
 .responsiveWeith {
-  @apply w-full px-5 sm:px-0 mx-auto sm:w-11/12 md:w-10/12;
+  @apply w-full px-5 sm:px-0 sm:w-11/12 md:w-10/12 lg:w-9/12 mx-auto;
 }
+
+.slick-dots li button:before {
+  color: #ccc;
+  font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #e6154b;
+  font-size: 14px;
+}
+
+.slick-dots {
+  position: absolute;
+  top: 90%;
+}
+
+
