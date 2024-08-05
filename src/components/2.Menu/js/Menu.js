@@ -340,7 +340,7 @@ export default function Menu() {
                 </div>
               ))}
               {selectedMenuListIndex > -1 ? (
-                <div className=" hidden lg:block p-8 absolute top-0 w-[250%]  border  bg-white h-[105%] left-[100%]">
+                <div className=" hidden lg:block p-8 absolute border-t border-[#e6154b] top-0 w-[250%]  bg-white h-[105%] left-[100%]">
                   <div className=" w-full grid grid-cols-2 gap-3 ">
                     {productList[selectedMenuListIndex].subItems.map(
                       (menuLink, i) => (
