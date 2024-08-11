@@ -1,62 +1,57 @@
-import React, { useState } from "react";
-import { IoLocationOutline } from "react-icons/io5";
-import { TbTruckDelivery } from "react-icons/tb";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { AiOutlineUser } from "react-icons/ai";
+import React, { useContext } from "react";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { CurrencyContext } from "../../CurrencyContext/js/CurrencyContext";
 
 export default function TopSection() {
-  const currencyList = ["USD", "LKR", "IR", "EURO", "AUD"];
-  const [selectedCurrenctIndex, setSelectedCurrenctIndex] = useState(0);
-
+  const { currencyList, currencyType, setCurrencyType } =
+    useContext(CurrencyContext);
   return (
-    <div className=" w-full relative pt-2 pb-1 border-b text-xs">
-      <div className=" responsiveWeith">
-        <div className=" w-full flex justify-between gap-10 items-center">
-          <p>Welcome to Singer</p>
-          <ul className=" flex items-center  gap-2 lg:gap-3">
-            <li className="  flex items-center gap-1 cursor-pointer">
-              <IoLocationOutline className=" size-3" />
-              <p className="hover:text-[#e6154b] duration-200 hidden md:block pt-1">
-                {" "}
-                Store Location
-              </p>
-            </li>
-            <li className=" text-gray-300 text-lg cursor-default">|</li>
-            <li className=" hover:text-[#e6154b] duration-200 hidden md:flex items-center gap-1  cursor-pointer">
-              <TbTruckDelivery className=" size-4 text-gray-600 " />
-              <p className=" pt-1">Track Your Order</p>
-            </li>
-            <li className="hidden md:flex text-gray-300 text-lg cursor-default">
-              |
-            </li>
-            <li className="group flex items-center justify-center gap-1 w-[70px]  cursor-pointer px-2 pb-1 relative">
-              <div className=" flex items-center ">
-                <p className="  pt-1">{currencyList[selectedCurrenctIndex]}</p>
-                <MdOutlineKeyboardArrowDown className=" mt-1 text-gray-500 size-4" />
-              </div>
-              <div className=" slideDown group-hover:block hidden bg-white z-20  w-[130%] absolute top-[90%] -left-[15%]  ">
-                {currencyList.map((currency, i) => (
-                  <p
-                    onClick={() => {
-                      setSelectedCurrenctIndex(i);
-                    }}
-                    key={i}
-                    className="hover:text-white duration-200 hover:bg-[#e6154b] w-full text-center py-1 "
-                  >
-                    {currency}
-                  </p>
-                ))}
-              </div>
-            </li>
-            <li className=" text-gray-300 text-lg cursor-default">|</li>
-            <li className=" flex items-center gap-1  cursor-pointer">
-              <AiOutlineUser className=" size-4 text-gray-700" />
-              <p className="hover:text-[#e6154b] duration-200 hidden md:block pt-1">
-                Regiser or Sing in
-              </p>
-            </li>
-          </ul>
-        </div>
+    <div className=" w-full py-2 relative border-b text-xs">
+      <div className=" responsiveWeith  sm:flex items-center space-y-2 sm:space-y-0 justify-between gap-8">
+        <ul className="  flex gap-2 items-center w-full sm:w-fit justify-between sm:justify-start text-gray-500">
+          <li className=" hover:text-black duration-200 cursor-pointer">
+            About Us
+          </li>
+          <li className="   cursor-default">|</li>
+          <li className=" hover:text-black duration-200 cursor-pointer">
+            My Account
+          </li>
+          <li className="  cursor-default">|</li>
+          <li className=" hover:text-black duration-200 cursor-pointer">
+            Wishlist
+          </li>
+          <li className="  cursor-default">|</li>
+          <li className=" hover:text-black duration-200 cursor-pointer">
+            Order Tracking
+          </li>
+        </ul>
+        <p className=" hidden lg:block   text-gray-500 w-full text-center sm:w-fit cursor-default">
+          100% Secure delivery without contacting the courier
+        </p>
+        <ul className=" flex items-center justify-between gap-2 text-gray-600">
+          <li className=" cursor-default">
+            Need Help? Call Us:{" "}
+            <span className=" text-[#2faf36] ">+1 234 5678</span>
+          </li>
+          <li className="   cursor-default hidden sm:block">|</li>
+          <li className=" flex items-center  gap-1 justify-center w-[55px] py-[1px] group relative ">
+            <p className=" cursor-pointer">{currencyList[currencyType]}</p>
+            <MdKeyboardArrowDown className=" size-3 mb-[2px]" />
+            <div className=" z-10 bg-white border-t-transparent w-full border absolute top-[100%] left-0  hidden group-hover:block ">
+              {currencyList.map((currency, index) => (
+                <p
+                  key={index}
+                  onClick={() => {
+                    setCurrencyType(index);
+                  }}
+                  className=" w-full text-center py-1 hover:bg-[#3eb944] cursor-pointer hover:text-white duration-200"
+                >
+                  {currency}
+                </p>
+              ))}
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );

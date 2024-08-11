@@ -17,7 +17,7 @@ body::-webkit-scrollbar-track {
 }
 
 .customScrollbar::-webkit-scrollbar-thumb {
-  background-color: #f3f3f382;
+  background-color: #787878a4;
   border-radius: 2px;
   cursor: pointer;
 }
@@ -117,7 +117,22 @@ body::-webkit-scrollbar-track {
 @keyframes slideDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slideDown1 {
+  animation: slideDown1 0.2s ease-in-out;
+}
+
+@keyframes slideDown1 {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
     opacity: 1;
@@ -126,13 +141,13 @@ body::-webkit-scrollbar-track {
 }
 
 .slideUp {
-  animation: slideUp 0.4s ease-in-out;
+  animation: slideUp 0.2s ease-in-out;
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -141,17 +156,15 @@ body::-webkit-scrollbar-track {
 }
 
 .zoomIn {
-  animation: zoom 0.3s ease-in-out;
+  animation: zoom 0.5s ease-in-out;
 }
 
 @keyframes zoom {
   from {
-    opacity: 0;
-    transform: scale(80%);
+    transform: scale(100%);
   }
   to {
-    opacity: 1;
-    transform: scale(100%);
+    transform: scale(110%);
   }
 }
 
@@ -170,8 +183,21 @@ body::-webkit-scrollbar-track {
   }
 }
 
+.opacity {
+  animation: opacity 0.2s ease-in-out;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .responsiveWeith {
-  @apply w-full px-5 sm:px-0 sm:w-11/12 md:w-10/12 lg:w-9/12 mx-auto;
+  @apply w-full px-5 sm:px-0 sm:w-11/12 md:w-10/12  mx-auto;
 }
 
 .slick-dots li button:before {
@@ -189,4 +215,34 @@ body::-webkit-scrollbar-track {
   top: 90%;
 }
 
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid #ff6347; /* Triangle color */
+}
 
+.compareChild {
+  display: none;
+}
+
+.compareParent:hover .compareChild {
+  display: block;
+}
+
+.previewChild {
+  display: none;
+}
+
+.previewParent:hover .previewChild {
+  display: block;
+}
+
+.favouriteChild {
+  display: none;
+}
+
+.favouriteParent:hover .favouriteChild {
+  display: block;
+}

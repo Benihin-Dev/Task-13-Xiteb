@@ -1,10 +1,13 @@
 import "./App.css";
-import HomePage from "./components/0.HomePage/js/HomePage";
+import HomePage from "./components/0.HomePage/HomePage";
+import { CurrencyProvider } from "./components/CurrencyContext/js/CurrencyContext";
 
 function App() {
   return (
-    <div className=" font-montserrat overflow-hidden ">
-      <HomePage />
+    <div className=" font-poppins overflow-hidden ">
+      <CurrencyProvider>
+        <HomePage />
+      </CurrencyProvider>
     </div>
   );
 }
