@@ -10,6 +10,7 @@ import FinalBanner from "../8.FinalBanner/js/FinalBanner";
 import Features from "../9.Features/js/Features";
 import Footer from "../10.Footer/js/Footer";
 import SlideUpBtn from "../SlideUpBtn/js/SlideUpBtn";
+import BottomSection from "../1.Header/js/BottomSection";
 
 export default function HomePage() {
   const [showSlideUpBtn, setShowSlideUpBtn] = useState(false);
@@ -52,7 +53,14 @@ export default function HomePage() {
       <FinalBanner />
       <Features />
       <Footer />
-      {showSlideUpBtn && <SlideUpBtn />}
+      {showSlideUpBtn && (
+        <>
+          <div className=" fixed top-0 left-0 right-0 z-40 slideDown">
+            <BottomSection />
+          </div>
+          <SlideUpBtn />
+        </>
+      )}
     </div>
   );
 }
