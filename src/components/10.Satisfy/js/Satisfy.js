@@ -1,9 +1,19 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 export default function Satisfy() {
+  const { ref, inView } = useInView({
+    threshold: 0.05,
+    triggerOnce: true,
+  });
   return (
     <div className=" w-full py-20 relative ">
-      <div className="responsiveWeith  grid md:grid-cols-2 gap-10">
+      <div
+        ref={ref}
+        className={`animated-component ${
+          inView ? "is-visible" : ""
+        }responsiveWeith  grid md:grid-cols-2 gap-10 `}
+      >
         <p className=" text-start text-2xl md:text-4xl font-medium uppercase">
           SATISFY
           <span className=" text-[#c41f3a]"> YOUR SWEET TOOTH</span> WITH OUR

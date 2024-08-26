@@ -2,13 +2,23 @@ import React, { useState } from "react";
 import bgImg from "../img/fx_video.jpg";
 import { FaPlay } from "react-icons/fa";
 import VideoPlayer from "./VideoPlayer";
+import { useInView } from "react-intersection-observer";
 
 export default function VideoBtn() {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
   const [videoPlayerState, setVideoPlayerState] = useState(false);
 
   return (
     <div className=" w-full py-10 relative bg-[#f1fbff]">
-      <div className=" w-full h-[250px] sm:h-[500px] overflow-hidden relative">
+      <div
+        ref={ref}
+        className={`animated-component ${
+          inView ? "is-visible" : ""
+        } w-full h-[250px] sm:h-[500px] overflow-hidden relative `}
+      >
         <img src={bgImg} className=" w-full h-full object-cover" alt="" />
         <div className=" absolute top-0 left-0 w-full flex items-center justify-center h-full">
           <div className="">

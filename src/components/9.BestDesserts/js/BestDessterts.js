@@ -12,8 +12,13 @@ import shopImg6 from "../img/fx_shop_11.jpg";
 import shopImg7 from "../img/fx_shop_12.jpg";
 import shopImg8 from "../img/fx_shop_120.jpg";
 import CustomBtn from "../../assets/js/CustomBtn";
+import { useInView } from "react-intersection-observer";
 
 export default function BestDessterts() {
+  const { ref, inView } = useInView({
+    threshold: 0.01,
+    triggerOnce: true,
+  });
   const data = [
     { img: shopImg1, name: "Marshmallows Smores", price: 91, ratine: 4 },
     { img: shopImg2, name: "Chocolate Moose", price: 65, ratine: 3 },
@@ -26,7 +31,12 @@ export default function BestDessterts() {
   ];
   return (
     <div className=" w-full relative py-20 bg-[#f1fbff]">
-      <div className=" responsiveWeith">
+      <div
+        ref={ref}
+        className={`animated-component ${
+          inView ? "is-visible" : ""
+        } responsiveWeith `}
+      >
         <p className=" text-center text-4xl font-medium uppercase">
           OUR
           <span className=" text-[#c41f3a]"> BEST </span> DESSERTS

@@ -2,11 +2,21 @@ import React from "react";
 import { SiGoogleplay } from "react-icons/si";
 import { FaApple } from "react-icons/fa";
 import deliveryImg from "../img/delivery.png";
+import { useInView } from "react-intersection-observer";
 
 export default function OnlineOrder() {
+  const { ref, inView } = useInView({
+    threshold: 0.06,
+    triggerOnce: true,
+  });
   return (
     <div className=" w-full relative py-10 group bg-[#f1fbff]">
-      <div className="responsiveWeith">
+      <div
+        ref={ref}
+        className={`animated-component ${
+          inView ? "is-visible" : ""
+        } responsiveWeith `}
+      >
         <div className=" w-full md:flex items-start">
           <div className=" w-full md:w-1/2">
             <p className="  text-5xl font-medium uppercase">

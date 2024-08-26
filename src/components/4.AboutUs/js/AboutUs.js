@@ -4,11 +4,24 @@ import girlImg from "../img/fx_ai_img.png";
 import bgImage from "../img/body01.png";
 import NumberIncreaser from "./NumberIncreaser";
 import CustomBtn from "../../assets/js/CustomBtn";
+import { useInView } from "react-intersection-observer";
 
 export default function AboutUs() {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
   return (
-    <div className=" w-full relative py-20">
-      <div className="responsiveWeith md:flex items-start">
+    <div
+      className={`
+      w-full relative py-20 `}
+    >
+      <div
+        ref={ref}
+        className={`animated-component ${
+          inView ? "is-visible" : ""
+        } responsiveWeith md:flex items-start `}
+      >
         <div className=" w-full md:w-1/2 flex items-center justify-center">
           <img
             src={aboutUsImg}
@@ -49,9 +62,9 @@ export default function AboutUs() {
               </div>
             </div>
             <div className=" mt-5 md:mt-0 flex items-center gap-3">
-              <p className=" text-6xl leading-6 font-semibold text-[#c41f3a]">
+              <div className=" text-6xl leading-6 font-semibold text-[#c41f3a]">
                 <NumberIncreaser targetNumber={20} incrementCount={1} />
-              </p>
+              </div>
               <p className=" text-xl  leading-5">
                 Years of <br />
                 <span className=" font-medium"> Experience</span>

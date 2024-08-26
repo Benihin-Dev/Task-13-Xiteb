@@ -2,6 +2,8 @@ import React from "react";
 import clientImg from "../img/fx_teste_1.jpg";
 import bgImg from "../img/body-06.png";
 import SliderForTestimonial from "./SliderForTestimonial";
+import { useInView } from "react-intersection-observer";
+
 
 export default function Testimonial() {
   const data = [
@@ -27,9 +29,18 @@ export default function Testimonial() {
       position: "App Developer",
     },
   ];
+  const { ref, inView } = useInView({
+    threshold: 0.07,
+    triggerOnce: true,
+  });
   return (
     <div className=" w-full relative py-10   ">
-      <div className="responsiveWeith">
+      <div
+        ref={ref}
+        className={`animated-component ${
+          inView ? "is-visible" : ""
+        } responsiveWeith `}
+      >
         <p className=" text-center text-4xl font-medium uppercase">
           OUR
           <span className=" text-[#c41f3a]"> CLIENTS</span> REVIEW

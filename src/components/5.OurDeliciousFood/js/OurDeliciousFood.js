@@ -3,6 +3,7 @@ import { FaRegEye } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
 import { IoIosHeart } from "react-icons/io";
 import bgImg from "../img/body-02.png";
+import { useInView } from "react-intersection-observer";
 
 //image import
 import shopImg1 from "../img/fx_shop_1.jpg";
@@ -16,6 +17,11 @@ import shopImg8 from "../img/fx_shop_8.jpg";
 import CustomBtn from "../../assets/js/CustomBtn";
 
 export default function OurDeliciousFood() {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   const data = [
     {
       img: shopImg1,
@@ -69,7 +75,12 @@ export default function OurDeliciousFood() {
   ];
   return (
     <div className=" w-full relative py-20 ">
-      <div className="responsiveWeith ">
+      <div
+        ref={ref}
+        className={`animated-component ${
+          inView ? "is-visible" : ""
+        } responsiveWeith `}
+      >
         <p className=" text-center text-4xl font-medium uppercase">
           Our
           <span className=" text-[#c41f3a]"> Delicious</span> Food

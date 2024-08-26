@@ -26,13 +26,13 @@ body::-webkit-scrollbar-track {
   background-color: #ffffff00;
 }
 
-.animated-componentFromRight {
+.animated-component {
   opacity: 0;
-  transform: translateX(30px);
+  transform: translateY(40px);
   transition: opacity 0.5s, transform 0.5s;
 }
 
-.animated-componentFromRight.is-visible {
+.animated-component.is-visible {
   opacity: 1;
   transform: translateX(0);
 }
@@ -126,7 +126,7 @@ body::-webkit-scrollbar-track {
 }
 
 .slideDown1 {
-  animation: slideDown1 0.2s ease-in-out;
+  animation: slideDown1 0.08s linear;
 }
 
 @keyframes slideDown1 {

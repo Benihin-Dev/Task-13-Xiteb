@@ -3,35 +3,25 @@ import logoImg from "../img/logo_t.svg";
 import { FaBars } from "react-icons/fa";
 import { PiMagnifyingGlassLight } from "react-icons/pi";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import NavItemsForSmallScreen from "./NavItemsForSmallScreen";
 
-export default function BottomSection({ searchBarState, setSearchBarState }) {
-  const navLinks = [
-    { link: "HOME", subLink: false },
-    { link: "ABOUT", subLink: false },
-    { link: "SHOP", subLink: ["SHOP", "CART", "MY ACCOUNT", "CHECKOUT"] },
-    { link: "PRODUCT", subLink: false },
-    {
-      link: "PAGES",
-      subLink: [
-        "MENU",
-        "OUR CHEF",
-        "PRICING",
-        "PROTFOLIO",
-        "TESTIMONIAL",
-        "FAQ",
-      ],
-    },
-    { link: "BLOGS", subLink: false },
-    { link: "CONTACT", subLink: false },
-  ];
+export default function BottomSection({
+  searchBarState,
+  setSearchBarState,
+  setnavItemStateForSmSc,
+  navLinks,
+}) {
   return (
     <div className=" py-1 px-5  font-khand text-[20px] relative  ">
       <div className=" flex items-center justify-between">
         <div>
           <img src={logoImg} className=" size-[50px] lg:size-[100px]" alt="" />
         </div>
-        <div className=" lg:hidden">
+        <div
+          onClick={() => {
+            setnavItemStateForSmSc(true);
+          }}
+          className=" lg:hidden"
+        >
           <FaBars className=" size-6 " />
         </div>
         <div className="hidden lg:flex gap-12 items-center text-white font-medium">
@@ -78,7 +68,6 @@ export default function BottomSection({ searchBarState, setSearchBarState }) {
           </button>
         </div>
       </div>
-      <NavItemsForSmallScreen />
     </div>
   );
 }

@@ -22,6 +22,31 @@ export default function HomePage() {
   const topSectionRef = useRef(null);
   const [searchBarState, setSearchBarState] = useState(false);
   const lastScrollY = useRef(0);
+  const [navItemStateForSmSc, setnavItemStateForSmSc] = useState(false);
+  const [navLinks, setnavLinks] = useState([
+    { link: "HOME", subLink: false },
+    { link: "ABOUT", subLink: false },
+    {
+      link: "SHOP",
+      subLink: ["SHOP", "CART", "MY ACCOUNT", "CHECKOUT"],
+      stateOfSubLink: false,
+    },
+    { link: "PRODUCT", subLink: false },
+    {
+      link: "PAGES",
+      subLink: [
+        "MENU",
+        "OUR CHEF",
+        "PRICING",
+        "PROTFOLIO",
+        "TESTIMONIAL",
+        "FAQ",
+      ],
+      stateOfSubLink: false,
+    },
+    { link: "BLOGS", subLink: false },
+    { link: "CONTACT", subLink: false },
+  ]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -68,6 +93,10 @@ export default function HomePage() {
         <Header
           setSearchBarState={setSearchBarState}
           searchBarState={searchBarState}
+          navLinks={navLinks}
+          setnavLinks={setnavLinks}
+          navItemStateForSmSc={navItemStateForSmSc}
+          setnavItemStateForSmSc={setnavItemStateForSmSc}
         />
         <div ref={topSectionRef} name="top-section">
           <Hero />
@@ -80,6 +109,9 @@ export default function HomePage() {
           <BottomSection
             setSearchBarState={setSearchBarState}
             searchBarState={searchBarState}
+            navLinks={navLinks}
+            navItemStateForSmSc={navItemStateForSmSc}
+            setnavItemStateForSmSc={setnavItemStateForSmSc}
           />
         </div>
       )}
