@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         montserrat: ["Montserrat"],
         poppins: ["Poppins"],
+        khand: ["Khand"],
       },
     },
   },

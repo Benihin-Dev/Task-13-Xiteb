@@ -1,14 +1,24 @@
-import React from "react";
-import TopSection from "./TopSection";
+import React, { useState } from "react";
+import SearchBar from "./SearchBar";
+import TopSectoin from "./TopSectoin";
 import BottomSection from "./BottomSection";
-import MiddlwSection from "./MiddleSection";
 
-export default function Header() {
+export default function Header({ searchBarState, setSearchBarState }) {
+
   return (
-    <div className=" border-b">
-      <TopSection />
-      <MiddlwSection />
-      <BottomSection />
-    </div>
+    <>
+      <TopSectoin />
+      <div className=" bg-white  lg:bg-[#111111]">
+        <BottomSection
+          setSearchBarState={setSearchBarState}
+          searchBarState={searchBarState}
+        />
+      </div>
+      {searchBarState && (
+        <div className="slideFromLeft  ">
+          <SearchBar setSearchBarState={setSearchBarState} />
+        </div>
+      )}
+    </>
   );
 }
