@@ -71,7 +71,7 @@ body::-webkit-scrollbar-track {
   from {
     opacity: 0;
 
-    transform: translateX(50px);
+    transform: translateX(10px);
   }
   to {
     opacity: 1;
@@ -184,7 +184,7 @@ body::-webkit-scrollbar-track {
 }
 
 .opacity {
-  animation: opacity 0.2s ease-in-out;
+  animation: opacity 0.3s ease-in-out;
 }
 
 @keyframes opacity {
@@ -268,3 +268,4 @@ body::-webkit-scrollbar-track {
     opacity: 0;
   }
 }
+ 

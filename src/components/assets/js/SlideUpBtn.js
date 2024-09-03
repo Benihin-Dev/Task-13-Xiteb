@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-scroll";
-import { IoIosArrowForward } from "react-icons/io";
+import { RiArrowUpDoubleLine } from "react-icons/ri";
 
 export default function SlideUpBtn() {
   return (
@@ -11,9 +11,9 @@ export default function SlideUpBtn() {
       spy={true}
       offset={-150}
     >
-      <div className=" fixed top-[92%]  sm:top-[88%] slideUp cursor-pointer duration-200 right-5 sm:right-8">
-        <div className=" bg-[#c41f3a]   text-gray-800 border-[#6a6e74]   hover:border-[#2faf36] p-2 rounded flex items-center justify-center">
-          <IoIosArrowForward className="size-5 sm:size-8 -rotate-90 text-white" />
+      <div className=" fixed top-[88%] z-50  sm:top-[88%] slideUp cursor-pointer duration-200 right-5 sm:right-8">
+        <div className=" bg-[#9c96989b]   text-white   p-2 rounded flex items-center justify-center">
+          <RiArrowUpDoubleLine className="size-6 sm:size-5  text-white" />
         </div>
       </div>
     </Link>

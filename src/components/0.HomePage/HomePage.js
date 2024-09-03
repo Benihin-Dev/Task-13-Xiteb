@@ -1,52 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Header from "../1.Header/js/Header";
 import Hero from "../2.Hero/js/Hero";
-import VideoBg from "../2.Hero/js/VideoBg";
-import Featured from "../3.Featured/js/Featured";
-import AboutUs from "../4.AboutUs/js/AboutUs";
-import OurDeliciousFood from "../5.OurDeliciousFood/js/OurDeliciousFood";
-import VideoBtn from "../6.VideoBtn/js/VideoBtn";
-import OnlineOrder from "../7.OnlineOrder/js/OnlineOrder";
-import Achivements from "../8.Achivements/js/Achivements";
-import BestDessterts from "../9.BestDesserts/js/BestDessterts";
-import Satisfy from "../10.Satisfy/js/Satisfy";
-import Testimonial from "../11.Testimonial/js/Testimonial";
-import Brand from "../12.Brand/js/Brand";
+import Menu from "../3.topMenu/js/Menu";
+import PopularCategory from "../4.popularCategory/js/PopularCategory";
+import Links from "../5.Links/js/Links";
+import LatestProducts from "../6.LatestProducts/js/LatestProducts";
+import SecureDelivery from "../7.SecureDelivery/js/SecureDelivery";
+import BestDeal from "../8.BestDeal/js/BestDeal";
+import TopSeller from "../9.TopSeller/js/TopSeller";
+import MiddleBanner from "../10.MiddleBanner/js/MiddleBanner";
+import FeatureProduct from "../11.FeatureProduct/js/FeatureProduct";
+import Testimonial from "../12.Testimonial/js/Testimonial";
 import Footer from "../13.Footer/js/Footer";
 import SlideUpBtn from "../assets/js/SlideUpBtn";
-import BottomSection from "../1.Header/js/BottomSection";
+import MiddleSection from "../1.Header/js/MiddleSection";
+import MiddleSectionForSmallScreen from "../1.Header/js/MiddleSectionForSmallScreen";
+import FooterNavSectionForSmallScreen from "../1.Header/js/FooterNavSectionForSmallScreen";
 
 export default function HomePage() {
   const [showSlideUpBtn, setShowSlideUpBtn] = useState(false);
-  const [hideBottomSection, setHideBottomSection] = useState(false);
   const topSectionRef = useRef(null);
-  const [searchBarState, setSearchBarState] = useState(false);
-  const lastScrollY = useRef(0);
-  const [navItemStateForSmSc, setnavItemStateForSmSc] = useState(false);
-  const [navLinks, setnavLinks] = useState([
-    { link: "HOME", subLink: false },
-    { link: "ABOUT", subLink: false },
-    {
-      link: "SHOP",
-      subLink: ["SHOP", "CART", "MY ACCOUNT", "CHECKOUT"],
-      stateOfSubLink: false,
-    },
-    { link: "PRODUCT", subLink: false },
-    {
-      link: "PAGES",
-      subLink: [
-        "MENU",
-        "OUR CHEF",
-        "PRICING",
-        "PROTFOLIO",
-        "TESTIMONIAL",
-        "FAQ",
-      ],
-      stateOfSubLink: false,
-    },
-    { link: "BLOGS", subLink: false },
-    { link: "CONTACT", subLink: false },
-  ]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -70,66 +43,39 @@ export default function HomePage() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY.current) {
-        setHideBottomSection(true); // Hide when scrolling down
-      } else {
-        setHideBottomSection(false); // Show when scrolling up
-      }
-      lastScrollY.current = window.scrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <div>
-      <div className=" w-full  relative overflow-hidden">
-        <Header
-          setSearchBarState={setSearchBarState}
-          searchBarState={searchBarState}
-          navLinks={navLinks}
-          setnavLinks={setnavLinks}
-          navItemStateForSmSc={navItemStateForSmSc}
-          setnavItemStateForSmSc={setnavItemStateForSmSc}
-        />
-        <div ref={topSectionRef} name="top-section">
-          <Hero />
-          <VideoBg />
-        </div>
+    <div className="">
+      <div ref={topSectionRef} name="top-section">
+        <Header />
+        <Hero />
       </div>
-
-      {!hideBottomSection && showSlideUpBtn && (
-        <div className=" slideDown bg-[#ffffffd5]  lg:bg-[#101010c7]  z-20 fixed top-0  left-0 right-0">
-          <BottomSection
-            setSearchBarState={setSearchBarState}
-            searchBarState={searchBarState}
-            navLinks={navLinks}
-            navItemStateForSmSc={navItemStateForSmSc}
-            setnavItemStateForSmSc={setnavItemStateForSmSc}
-          />
-        </div>
-      )}
-
-      <div className="">
-        <Featured />
-        <AboutUs />
-        <OurDeliciousFood />
-        <VideoBtn />
-        <OnlineOrder />
-        <Achivements />
-        <BestDessterts />
-        <Satisfy />
-        <Testimonial />
-        <Brand />
-        <Footer />
-        {showSlideUpBtn && <SlideUpBtn />}
+      <Menu />
+      <PopularCategory />
+      <Links />
+      <LatestProducts />
+      <SecureDelivery />
+      <BestDeal />
+      <TopSeller />
+      <MiddleBanner />
+      <FeatureProduct />
+      <Testimonial />
+      <Footer />
+      {showSlideUpBtn && <SlideUpBtn />}
+      <div
+        className={` ${
+          showSlideUpBtn ? "slide-down" : "slide-up"
+        } fixed top-0 left-0 w-full middleComponent hidden sm:block bg-white z-40 `}
+      >
+        <MiddleSection />
       </div>
+      <div
+        className={` ${
+          showSlideUpBtn ? "slide-down" : "slide-up"
+        } fixed top-0 left-0 w-full middleComponent sm:hidden block bg-white z-40 `}
+      >
+        <MiddleSectionForSmallScreen />
+      </div>
+      <FooterNavSectionForSmallScreen />
     </div>
   );
 }
