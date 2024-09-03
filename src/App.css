@@ -269,3 +269,25 @@ body::-webkit-scrollbar-track {
   }
 }
  
+.middleComponent {
+  transform: translateY(-4%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out,
+    visibility 0s 0.2s;
+}
+
+.slide-down2 {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.slide-up2 {
+  transform: translateY(-4%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out,
+    visibility 0s 0.2s;
+}

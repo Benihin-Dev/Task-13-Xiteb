@@ -63,14 +63,14 @@ export default function HomePage() {
       {showSlideUpBtn && <SlideUpBtn />}
       <div
         className={` ${
-          showSlideUpBtn ? "slide-down" : "slide-up"
+          showSlideUpBtn ? "slide-down2" : "slide-up2"
         } fixed top-0 left-0 w-full middleComponent hidden sm:block bg-white z-40 `}
       >
         <MiddleSection />
       </div>
       <div
         className={` ${
-          showSlideUpBtn ? "slide-down" : "slide-up"
+          showSlideUpBtn ? "slide-down2" : "slide-up2"
         } fixed top-0 left-0 w-full middleComponent sm:hidden block bg-white z-40 `}
       >
         <MiddleSectionForSmallScreen />
