@@ -16,10 +16,15 @@ import SlideUpBtn from "../assets/js/SlideUpBtn";
 import MiddleSection from "../1.Header/js/MiddleSection";
 import MiddleSectionForSmallScreen from "../1.Header/js/MiddleSectionForSmallScreen";
 import FooterNavSectionForSmallScreen from "../1.Header/js/FooterNavSectionForSmallScreen";
+import BottomSection from "../1.Header/js/BottomSection";
+import SearchBox from "../1.Header/js/SearchBox";
 
 export default function HomePage() {
   const [showSlideUpBtn, setShowSlideUpBtn] = useState(false);
   const topSectionRef = useRef(null);
+  const [bottomSectionStateFoeSlide, setBottomSectionStateFoeSlide] =
+    useState(false);
+  const [searchBoxState, setSearchBoxState] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,7 +51,10 @@ export default function HomePage() {
   return (
     <div className="">
       <div ref={topSectionRef} name="top-section">
-        <Header />
+        <Header
+          searchBoxState={searchBoxState}
+          setSearchBoxState={setSearchBoxState}
+        />
         <Hero />
       </div>
       <Menu />
@@ -66,16 +74,26 @@ export default function HomePage() {
           showSlideUpBtn ? "slide-down2" : "slide-up2"
         } fixed top-0 left-0 w-full middleComponent hidden sm:block bg-white z-40 `}
       >
-        <MiddleSection />
+        <MiddleSection
+          showSlideUpBtn={showSlideUpBtn}
+          setBottomSectionStateFoeSlide={setBottomSectionStateFoeSlide}
+          bottomSectionStateFoeSlide={bottomSectionStateFoeSlide}
+          searchBoxState={searchBoxState}
+          setSearchBoxState={setSearchBoxState}
+        />
       </div>
       <div
         className={` ${
           showSlideUpBtn ? "slide-down2" : "slide-up2"
         } fixed top-0 left-0 w-full middleComponent sm:hidden block bg-white z-40 `}
       >
-        <MiddleSectionForSmallScreen />
+        <MiddleSectionForSmallScreen
+          searchBoxState={searchBoxState}
+          setSearchBoxState={setSearchBoxState}
+        />
       </div>
-      <FooterNavSectionForSmallScreen />
+      {showSlideUpBtn && <FooterNavSectionForSmallScreen />}
+      {searchBoxState && <SearchBox setSearchBoxState={setSearchBoxState} />}
     </div>
   );
 }

@@ -126,7 +126,7 @@ body::-webkit-scrollbar-track {
 }
 
 .slideDown1 {
-  animation: slideDown1 0.08s linear;
+  animation: slideDown1 0.2s linear;
 }
 
 @keyframes slideDown1 {
@@ -268,7 +268,7 @@ body::-webkit-scrollbar-track {
     opacity: 0;
   }
 }
- 
+
 .middleComponent {
   transform: translateY(-4%);
   opacity: 0;
@@ -291,3 +291,4 @@ body::-webkit-scrollbar-track {
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out,
     visibility 0s 0.2s;
 }
+ 

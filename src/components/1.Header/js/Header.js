@@ -4,11 +4,14 @@ import TopSection from "./TopSection";
 import BottomSection from "./BottomSection";
 import MiddleSection from "./MiddleSection";
 
-export default function Header() {
+export default function Header({ setSearchBoxState, searchBoxState }) {
   return (
     <div className=" border-b">
       <TopSection />
-      <MiddleSection />
+      <MiddleSection
+        searchBoxState={searchBoxState}
+        setSearchBoxState={setSearchBoxState}
+      />
       <BottomSection />
     </div>
   );
