@@ -1,15 +1,15 @@
 body::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #b0afaf8e;
+  background-color: #ffa101;
   border-radius: 2px;
   cursor: pointer;
 }
 
 body::-webkit-scrollbar-track {
-  background-color: #ffffff00;
+  background-color: #e2dfdcb6;
 }
 
 .customScrollbar::-webkit-scrollbar {
@@ -17,13 +17,13 @@ body::-webkit-scrollbar-track {
 }
 
 .customScrollbar::-webkit-scrollbar-thumb {
-  background-color: #787878a4;
+  background-color: #514e4ed8;
   border-radius: 2px;
   cursor: pointer;
 }
 
 .customScrollbar::-webkit-scrollbar-track {
-  background-color: #ffffff00;
+  background-color: #ffffff;
 }
 
 .animated-component {
@@ -184,7 +184,7 @@ body::-webkit-scrollbar-track {
 }
 
 .opacity {
-  animation: opacity 0.3s ease-in-out;
+  animation: opacity 0.4s ease-in-out;
 }
 
 @keyframes opacity {
@@ -291,4 +291,225 @@ body::-webkit-scrollbar-track {
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out,
     visibility 0s 0.2s;
 }
- 
+
+.rounded-left-border {
+  border: 2px dashed #ffab1d; /* Add a border */
+  border-left: 2px dashed #ffab1d; /* Set thicker left border */
+  border-radius: 50% 0 0 50%;
+  border-right: 2px dashed transparent; /* Round only the left side */
+}
+
+.rotate {
+  animation: rotate 120s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate2 {
+  animation: rotate2 10s linear infinite;
+}
+
+@keyframes rotate2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.scaleUp {
+  animation: scaleUp 20s linear infinite;
+}
+
+@keyframes scaleUp {
+  0%,
+  100% {
+    transform: scale(80%);
+  }
+  50% {
+    transform: scale(150%);
+  }
+
+  80% {
+    transform: scale(110%);
+  }
+}
+
+.reverceRotate {
+  animation: reverceRotate 80s linear infinite;
+}
+
+@keyframes reverceRotate {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-360deg);
+  }
+  66% {
+    transform: rotate(360deg);
+  }
+}
+
+.moving {
+  animation: moving 5s ease-in-out infinite;
+}
+
+@keyframes moving {
+  0%,
+  100% {
+    transform: translateX(0px);
+    transform: translateY(0px);
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: translateX(5px);
+    transform: translateY(-5px);
+    transform: rotate(-10deg);
+  }
+  80% {
+    transform: translateX(6px);
+    transform: translateY(-8px);
+    transform: rotate(6deg);
+  }
+}
+
+.movingOnX {
+  animation: movingOnX 5s ease-in-out infinite;
+}
+
+@keyframes movingOnX {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(25px);
+  }
+}
+
+.movingOnY {
+  animation: movingOnY 5s ease-in-out infinite;
+}
+
+@keyframes movingOnY {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+}
+
+.movingOnY1 {
+  animation: movingOnY1 4s ease-in-out infinite;
+}
+
+@keyframes movingOnY1 {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+.addToCartChild {
+  left: -32px;
+}
+.addToCartParent:hover > .addToCartChild {
+  left: 110%;
+}
+
+.weeklyOfferSliderParent:hover > .weeklyOfferSliderChild {
+  display: flex;
+}
+
+.findRestaurantBtnChild {
+  left: -20px;
+}
+
+.findRestaurantBtnParent:hover > .findRestaurantBtnChild {
+  left: 110%;
+  animation: slideOnBtn 800ms ease-in-out 1;
+}
+
+@keyframes slideOnBtn {
+  0% {
+    left: -20px;
+    background-color: #ffffffb6;
+  }
+
+  50% {
+    left: 200%;
+    background-color: #ffffff50;
+  }
+  51% {
+    background-color: #ffffff00;
+  }
+  100% {
+    background-color: #ffffff00;
+    left: -20px;
+  }
+}
+
+.rotateDance {
+  animation: rotateDance 2s ease-in-out infinite;
+}
+
+@keyframes rotateDance {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  60% {
+    transform: rotate(50deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+.cartComponent {
+  transform: translateX(2%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    visibility 0s 0.3s;
+}
+
+.slide-right {
+  transform: translateX(2%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.slide-left {
+  transform: translateX(0%);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    visibility 0s 0.3s;
+}
+
+.hideCartComponent {
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-in-out, opacity 0.3 ease-in-out,
+    visibility 0s 0.3s;
+}
