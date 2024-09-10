@@ -5,8 +5,10 @@ import { PiMagnifyingGlassLight } from "react-icons/pi";
 import { LiaPizzaSliceSolid } from "react-icons/lia";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
+import { RxCross2 } from "react-icons/rx";
 import SearchBox from "./SearchBox";
 import CartSection from "./CartSection";
+import NavLinksForSmScreen from "./NavLinksForSmScreen";
 
 export default function Header({ showSlideUpBtn }) {
   const navLinks = [
@@ -39,6 +41,7 @@ export default function Header({ showSlideUpBtn }) {
   const [searchBoxState, setSearchBoxState] = useState(false);
   const [cartState, setCartState] = useState(false);
   const [activeSection, setActiveSection] = useState("Home");
+  const [smallScreenNavLinkState, setSmallScreenNavLinkState] = useState(false);
 
   return (
     <>
@@ -47,7 +50,7 @@ export default function Header({ showSlideUpBtn }) {
           showSlideUpBtn ? "bg-white   border-b" : "bg-transparent"
         }   py-6 fixed top-0 left-0 z-30 `}
       >
-        <div className=" responsiveWeith flex justify-between gap-10">
+        <div className=" relative responsiveWeith flex justify-between gap-10">
           <img
             src="https://themes.xcommerz.com/pizza-shop/assets/images/logo.png"
             className=" w-36 object-contain"
@@ -182,12 +185,30 @@ export default function Header({ showSlideUpBtn }) {
                   className=" size-6 text-gray-700 duration-200 hover:text-gray-400 cursor-pointer"
                 />
               </div>
-              <div className=" block lg:hidden">
-                <HiMiniBars3CenterLeft className=" size-6 text-gray-700 duration-200 hover:text-gray-400 cursor-pointer" />
+              <div
+                onClick={() => {
+                  setSmallScreenNavLinkState(!smallScreenNavLinkState);
+                }}
+                className=" block lg:hidden"
+              >
+                {smallScreenNavLinkState ? (
+                  <RxCross2 className=" size-6 text-gray-700 duration-200 hover:text-gray-400 cursor-pointer" />
+                ) : (
+                  <HiMiniBars3CenterLeft className=" size-6 text-gray-700 duration-200 hover:text-gray-400 cursor-pointer" />
+                )}
               </div>
             </div>
           </div>
         </div>
+        {/* {smallScreenNavLinkState && ( */}
+        <div
+          className={` absolute navLinkComponent  top-[90%] flex items-center justify-center w-screen  left-0  ${
+            smallScreenNavLinkState ? "slide-downS" : "slide-upS"
+          }`}
+        >
+          <NavLinksForSmScreen navLinks={navLinks} />
+        </div>
+        {/* )} */}
       </div>
       {searchBoxState && (
         <SearchBox
